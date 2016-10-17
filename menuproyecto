@@ -1,0 +1,23 @@
+#!/bin/bash
+clear
+while [ "$var" != 5 ]
+do
+echo "
+1) Ingrese pago 
+2) Emitir estado de cuenta
+3) Situacion de cada propietario
+4) Atrasos de pagos
+5) Salir
+
+Ingrese la opcion deseada: "
+read var
+case $var in
+1) ./ingreso.sh;;
+2) ./estado.sh;;		
+3) ./situación.sh;;
+4) ./atrasos.sh;;
+5) echo -e '\e[0;32m Saliendo...\n \e[0m'; exit 1;echo ;;
+*) echo -e '\e[0;31m Opción incorrecta\e[0m'
+esac
+done
+
