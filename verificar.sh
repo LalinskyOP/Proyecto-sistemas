@@ -3,10 +3,12 @@ clear
 read -p "Ingrese el número de apartamento: " id_apto 
 if grep -wq $id_apto pagos.txt 2> /dev/null 
 then
-	echo -n "El pago ya fue realizado con éxito\n"
+	echo -n "El pago ya fue realizado con éxito
+
+"
 	exit
 else
-	echo -n "No hay ningun pago, para pagar presione cualquier tecla, para salir presione la tecla s"
+	echo -n "No hay ningun pago, para pagar presione cualquier tecla, para salir presione la tecla s:    "
 	read op
 	if [ $op = s ]
 	then 
