@@ -34,7 +34,7 @@ echo Numero de apto incorrecto
 read op 
 	if [ $op = s ]
 then 
-echo Saliendo
+echo Saliendo...
 	fi
 fi 
 fi

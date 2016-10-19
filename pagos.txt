@@ -1,8 +1,5 @@
+
 2:octubre:2100
-3:julio:2100
-2:julio:2100
-3:julio:2100
-1:setiembre:2100
-5:enero:2100
-2:febrero:2100
-1:octubre:2100
+2:octubre:2100
+16:julio:2100
+14:julio:2100
