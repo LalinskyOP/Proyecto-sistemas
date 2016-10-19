@@ -13,7 +13,7 @@ read var
 case $var in
 1) ./verificar.sh ;;
 2) ./ingreso.sh;;
-3) ./menuproyecto.sh;;
+3) echo -e '\e[0;32m Regresando...\e[0m' ; sleep 1;clear;;
 *) echo Opcion incorrecta
 esac
 done
