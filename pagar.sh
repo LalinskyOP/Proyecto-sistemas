@@ -20,34 +20,34 @@
 # A15 Y Y Y N Y Y N Y N
 # A16 Y Y Y N Y Y N Y N
 
+#!/bin/bash
+# set -x; # debug...
 
-
-# obtiene total meses de deuda para un apto
-# paramtros posicionales:
-# 1: numero apartamento
-function meses_deuda() {
-  cat /tmp/pagos |grep "A${APT}"| tr " " "\n" |grep --count "N";
-}
-
-
-# verifica si un apartamento tiene mas de 4 meses de deuda
-# paramtros posicionales:
-# 1: numero apartamento
-# devuelve: 1 si es moroso, o 0 (cero) si no lo es
-function es_moroso () {
-  APT=$1;
-  MESES_DEUDA=$(meses_deuda $APT);
-  if [[ $MESES_DEUDA -ge 4 ]]; then { echo "1"; } else { echo "0"; } fi;
-}
-
-
-
+# load functions
+source /tmp/common_functions.sh
 
 
 cat /tmp/pagos;
 echo "=================================================";
 
-read -p "ingrese apartamento: " PAGO_APT;
+# esto hay que corregir el flujo para volver al menu anterior y tambien hay que abstraer el leer el # de apto a una funcion aparte
+proximo="C"; # Continuar
+while true; do {
+  read -p "ingrese apartamento: " PAGO_APT;
+  if [[ $(apartamento_es_valido $PAGO_APT) -gt 0 ]]; then {
+    echo "'${PAGO_APT}' no es un numero de apartamento valido";
+    read -p "presione S para salir o cualquier tecla para intentar nuevamente" proximo;
+    if [[ $proximo == "S" ]]; then { # Salir
+      break; 
+    } fi;
+  } else { 
+    break; # exit loop
+  } fi;
+} done;
+
+echo "$proximo"; read;
+
+
 read -p "ingrese mes a pagar: " PAGO_MES;
 PAGO_MES_POS=$(($PAGO_MES + 1)); # por la columna con el id de apartamento
 TMP_FILE=$(mktemp); # obtengo nombre archivo temporal
@@ -80,5 +80,3 @@ mv /tmp/pagos /tmp/pagos.old.$(date +%s) && mv $TMP_FILE /tmp/pagos;
 cat /tmp/pagos;
 echo "${MSG}"; 
 read -p "presione cualquier tecla para continuar.";
-
-
