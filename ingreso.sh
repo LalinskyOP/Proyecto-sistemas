@@ -32,7 +32,7 @@ echo $id_apto:$corresponde_mes:$monto >> pagos.txt
 else
 echo Numero de apto incorrecto
 read op 
-	if [ $op = s ]
+	if [ $op = "s" ]
 then 
 echo Saliendo...
 	fi

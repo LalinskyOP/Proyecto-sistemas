@@ -11,8 +11,8 @@ echo " ¿Que desea consultar?
 Ingrese su opción deseada: "
 read var
 case $var in
-1) ./propietario.sh;;
-2) ./deudas.sh;;
+1) chmod u+x propietario.sh; ./propietario.sh;;
+2) chmod u+x deudas.sh; ./deudas.sh;;
 3) echo -e '\e[0;32m Saliendo...\e[0m';sleep 1;clear;;
 *) echo -e '\e[0;31m Opción incorrecta\e[0m'
 esac 

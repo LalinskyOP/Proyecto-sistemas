@@ -11,10 +11,10 @@ echo  " Bienvenidos
 Ingrese la opcion deseada: "
 read var
 case $var in
-1) ./metodo_pago.sh;;
-2) ./consulta.sh;;		
-3) echo -e '\e[0;36m Saliendo...\n \e[0m' ; sleep 1; clear; exit 1  ;;
-*) echo -e '\e[0;31m Opción incorrecta\e[0m' 
+1) chmod u+x metodo_pago.sh; ./metodo_pago.sh;;
+2) chmod u+x consulta.sh; ./consulta.sh;;		
+3) echo -e '\e[0;32m Saliendo...\n \e[0m' ; sleep 1; clear; exit 1  ;;
+*) echo -e "\n\e[0;31m Opción incorrecta\e[0m"; sleep 1; clear;; 
 esac
 done
 
