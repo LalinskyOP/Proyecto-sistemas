@@ -5,7 +5,7 @@ do
 echo  " Bienvenidos 
 
 1) Ingrese pago 
-2) Consulta deudas
+2) Consultas 
 3) Salir
 
 Ingrese la opcion deseada: "

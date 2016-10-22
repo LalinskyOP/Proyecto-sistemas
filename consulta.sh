@@ -5,7 +5,7 @@ do
 echo " ¿Que desea consultar?
 
 1) Información acerca del propietario
-2) Consulta sobre deudas 
+2) Estado de cuenta  
 3) Volver al menú principal 
 
 Ingrese su opción deseada: "
