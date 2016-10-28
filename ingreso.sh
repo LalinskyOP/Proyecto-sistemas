@@ -14,29 +14,41 @@ echo "Hoy es: $fecha"
 			sleep 3
 			clear
 			'./menuproyecto.sh'
+	
+		elif [ $meses -eq 1 -a $dia -ge 1 -a $dia -le 10 ]
+		then 
+		read -p "Usted debe $meses mes, y como esta realizando los pagos en fecha usted tiene un descuento del 5%, el pago seria por el monto de 1995 pesos. Si desea volver al menu principal presione s de lo contrario presione cualquier tecla para efectuar el pago: "  op
+		if [ $op = "s" -o $op = "S" ]
+		then
+			echo -e '\e[0;32mRegresando...\e[0m'
+			sleep 2
+			clear
+			'./menuproyecto.sh'
 		else
-			read -p "Usted debe $meses meses. ¿Cuantos meses desea pagar?" debe
+			grep -w -v -e $id_apto historial_pago.txt > auxiliar_pago.txt
+			grep -w -e $id_apto historial_pago.txt | sed -n 's/N/S/p' >> auxiliar_pago.txt
+			mv auxiliar_pago.txt historial_pago.txt
+			echo "El pago se registr&oacute correctamente. "
+			sleep 2
+			clear
+			'./menuproyecto.sh'
+		fi
+
+		else
+			read -p "Usted debe $meses meses. ¿Cuantos meses desea pagar? " debe
 			if [ $debe -le $meses -a $debe -gt 0 ]
 			then
-				grep -q -v -e $id_apto historial_pago.txt > auxiliar.txt
-				contador=1
-				let repetir=$debe+1
-				veces=1
-				while [ $contador -gt 1 -a $contador -lt 10 -a $veces -lt $repetir ]
-				do
-				colum=$(grep -qw -e $id_apto historial_pago.txt | cut -d ":" -f$contador)
 				
-				if [ colum="N$contador" ]
-				then 
-					grep -qw -e $id_apto historial_pago.txt | sed 's/N$contador/S$contador/' >> auxiliar.txt
-					mv auxiliar.txt historial_pago.txt
-					let veces=$veces+1
-					let contador=contador+1
-				else 
-					let contador=$contador+1
-				fi
-			done			
-				echo "Pago realizado con exito."
+				cont=1
+				while [ $cont -le $debe ]
+				do
+				grep -w -v -e $id_apto historial_pago.txt > auxiliar_pago.txt
+				grep -w -e $id_apto historial_pago.txt | sed -n 's/N/S/p' >> auxiliar_pago.txt
+				mv auxiliar_pago.txt historial_pago.txt
+				let cont=$cont+1
+				
+				done  
+				echo "Pago realizado con exito."|
 				sleep 3
 				clear
 				'./menuproyecto.sh'

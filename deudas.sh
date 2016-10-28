@@ -9,7 +9,7 @@ then
 	tel=$(grep -w -e $i propietarios.txt| cut -f5 -d ":")
 	suman=$(grep -w -e $i historial_pago.txt | grep -o "N" | wc -l)
 	deu=$(($suman * 2100))
-	echo -e "Apartamento: $i\nNombre: $nom\nApellido: $ape\nCédula: $ci\nTeléfono: $tel\n Meses a pagar: $suman\nTiene que pagar: $deu pesos"
+	echo -e "Apartamento: $i\nNombre: $nom\nApellido: $ape\nCédula: $ci\nTeléfono: $tel\nMeses a pagar: $suman\nTiene que pagar: $deu pesos"
 	read -p "Para volver presione cualquier tecla: " op
 	if [ $op ]
 	then
