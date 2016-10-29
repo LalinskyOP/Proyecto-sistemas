@@ -1,9 +1,9 @@
 #!/bin/bash
 clear
 
-for (( i=1 ; i<=16 ; i++ ))
+for (( i=1 ; i<=16 ; i++ ))  			
 do
-deudores=$(grep -o -w "N" historial_pago.txt | wc -l)
+deudores=$(grep -o -w "N" historial_pago.txt | wc -l) 			#NUNCA CUENTA LAS N DE CADA PROPIETARIO	
 echo "Hay $deudores inquilinos que deben 4 o más meses"
 sleep 3
 clear
@@ -26,4 +26,7 @@ case $var in
 esac
 done
 done
+
+#Integrantes del equipo: Leandro Camarano, José Lecha y Renzo Villella 
+#Grupo: 2°BH
 

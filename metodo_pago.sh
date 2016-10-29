@@ -18,3 +18,6 @@ case $var in
 esac
 done
 
+#Integrantes del equipo: Leandro Camarano, José Lecha y Renzo Villella 
+#Grupo: 2°BH
+

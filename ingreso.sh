@@ -23,7 +23,7 @@ echo "Hoy es: $fecha"
 			echo -e '\e[0;32mRegresando...\e[0m'
 			sleep 2
 			clear
-			'./menuproyecto.sh'
+			exit
 		else
 			grep -w -v -e $id_apto historial_pago.txt > auxiliar_pago.txt
 			grep -w -e $id_apto historial_pago.txt | sed -n 's/N/S/p' >> auxiliar_pago.txt
@@ -31,7 +31,7 @@ echo "Hoy es: $fecha"
 			echo "El pago se registr&oacute correctamente. "
 			sleep 2
 			clear
-			'./menuproyecto.sh'
+			exit
 		fi
 
 		else
@@ -47,19 +47,22 @@ echo "Hoy es: $fecha"
 				mv auxiliar_pago.txt historial_pago.txt
 				let cont=$cont+1
 				
-				done  
+				done  						#NUNCA LLEGA A ESTA PARTE, NO TIRA EL MSJ
 				echo "Pago realizado con exito."|
 				sleep 3
 				clear
-				'./menuproyecto.sh'
+				exit
 			else
 				echo "Dato incorrecto. Volviendo al menu principal..."
 				sleep 2
 				clear
-				'./menuproyecto.sh'
+				exit
 			
 			fi	  
  		fi
 	fi
+
+#Integrantes del equipo: Leandro Camarano, José Lecha y Renzo Villella 
+#Grupo: 2°BH
 
 

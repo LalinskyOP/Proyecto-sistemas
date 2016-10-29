@@ -13,7 +13,10 @@ read var
 case $var in
 1) chmod u+x propietario.sh; ./propietario.sh;;
 2) chmod u+x deudas.sh; ./deudas.sh;;
-3) echo -e '\e[0;32m Saliendo...\e[0m';sleep 1;clear; './menuproyecto.sh';;
+3) echo -e '\e[0;32m Saliendo...\e[0m';sleep 1;clear; exit;;
 *) echo -e '\e[0;31m Opción incorrecta\e[0m'; sleep 1 ; clear;;
 esac 
 done
+
+#Integrantes del equipo: Leandro Camarano, José Lecha y Renzo Villella 
+#Grupo: 2°BH

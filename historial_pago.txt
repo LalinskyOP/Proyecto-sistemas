@@ -1,3 +1,5 @@
+#Integrantes del equipo: Leandro Camarano, José Lecha y Renzo Villella 
+#Grupo: 2°BH
 ene: feb: mar: abr : may : jun : jul : ago : set :N°Apto
 S1 : N2 : N3 : N4  : S5  : S6  : S7  : N8  : S9  :1
 S1 : S2 : S3 : S4  : S5  : S6  : S7  : S8  : N9  :4
@@ -12,6 +14,6 @@ S1 : S2 : S3 : S4  : S5  : S6  : S7  : S8  : S9  :15
 N1 : N2 : N3 : N4  : N5  : N6  : N7  : N8  : N9  :16
 N1 : N2 : S3 : N4  : S5  : S6  : S7  : S8  : S9  :7
 S1 : S2 : S3 : S4  : S5  : S6  : S7  : S8  : S9  :12
-S1 : S2 : S3 : S4  : N5  : N6  : N7  : N8  : N9  :3
 S1 : S2 : S3 : S4  : S5  : S6  : S7  : S8  : S9  :2
 S1 : S2 : S3 : S4  : S5  : S6  : S7  : S8  : S9  :13
+S1 : S2 : S3 : S4  : S5  : S6  : S7  : S8  : N9  :3
