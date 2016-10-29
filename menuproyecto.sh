@@ -1,12 +1,8 @@
 #!/bin/bash
 clear
-
-for (( i=1 ; i<=16 ; i++ ))  			
-do
-deudores=$(grep -o -w "N" historial_pago.txt | wc -l) 			#NUNCA CUENTA LAS N DE CADA PROPIETARIO	
-echo "Hay $deudores inquilinos que deben 4 o más meses"
-sleep 3
-clear
+deudores=0
+for ((i=1;i<=16;i++)); do  cont=$(grep -w $i historial_pago.txt | grep -o -e "N" | wc -l); if [ $cont -ge 4 ]; then  let deudores=$deudores+1; fi; done
+if [ $deudores!=0 ]; then echo "Hay $deudores inquilinos que deben cuatro meses o m$aacutes"; sleep 3; clear; fi
 
 while [ "$var" != 3 ]
 do
