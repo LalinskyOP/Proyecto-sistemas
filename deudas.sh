@@ -24,3 +24,6 @@ sleep 1
 clear
 exit
 fi
+
+#Integrantes del equipo: Leandro Camarano, José Lecha y Renzo Villella 
+#Grupo: 2°BH
