@@ -39,7 +39,9 @@ then
 	echo "Hay $deudores inquilinos que deben cuatro meses o mas"
 	sleep 3
 	clear
-	'./menuproyecto.sh'
+	'menuproyecto.sh'
 else
-	'./menuproyecto.sh'
+	'menuproyecto.sh'
 	fi
+
+
