@@ -1,5 +1,12 @@
 #!/bin/bash
 clear
+chmod u+x menuproyecto.sh
+chmod u+x metodo_pago.sh
+chmod u+x consulta.sh
+chmod u+x deuda.sh
+chmod u+x ingreso.sh
+chmod u+x verificar.sh
+chmod u+x propietario.sh
 deudores=0
 if [ Deudores ]
 then
@@ -36,12 +43,13 @@ done
 fi
 if [ $deudores!=0 ]
 then
-	echo "Hay $deudores inquilinos que deben cuatro meses o mas"
+	echo "Hay $deudores inquilinos que deben cuatro meses o mas de alquiler."
 	sleep 3
 	clear
-	'menuproyecto.sh'
+	'./menuproyecto.sh'
 else
-	'menuproyecto.sh'
-	fi
+	'./menuproyecto.sh'
+fi
 
-
+#Integrantes del equipo: Leandro Camarano, José Lecha y Renzo Villella 
+#Grupo: 2°BH
